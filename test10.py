@@ -1,6 +1,6 @@
 #ALISH JOKER [ ALI AHMADI ]
 #=====================================================================
-from dandy import *
+#from dandy import *
 from liff.ttypes import LiffChatContext, LiffContext, LiffSquareChatContext, LiffNoneContext, LiffViewRequest
 from akad.ttypes import Message
 from akad.ttypes import ContentType as Type
@@ -39,7 +39,7 @@ except ImportError:
 #client.log("Auth Token : " + str(client.authToken))
 #client.log("Timeline Token : " + str(client.tl.channelAccessToken))
 #LOGIN DGN QR#
-print ("\n\n ---  Dandy Uching Bots  ---\n")
+print ("\n\n ---  alishjkr Uching Bots  ---\n")
 print ('--SILAHKAN COPY LINK QR DI BAWAH DAN PASTE DI APLIKASI LINE ANDA ... :) -')
 client = LINE()
 client.log("Auth Token : " + str(client.authToken))
@@ -1603,7 +1603,7 @@ async def clientBot(op):
                             spkg = stickers2[sticker]["STKPKGID"]
                             sver = stickers2[sticker]["STKVER"]
                             a = client.shop.getProduct(packageID=int(spkg), language='ID', country='ID')
-                            if a.hasAnimation == True:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "http://line.me/ti/p/~dandyhayate"}}]}}
+                            if a.hasAnimation == True:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "http://line.me/ti/p/~alishjkr"}}]}}
                             else:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/android/sticker@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"}}]}}
                             sendTemplate(to,data)
                     except Exception as e:
@@ -2766,7 +2766,7 @@ async def clientBot(op):
                         elif cmd == "okley":
                             data = {
                                 "type": "template",
-                                "altText": "Dandy Mengirim video",
+                                "altText": "alish Mengirim video",
                                 "template": {
                                     "type": "image_carousel",
                                     "columns": [
@@ -2786,7 +2786,7 @@ async def clientBot(op):
                         elif cmd == "nah":
                             data = {
                                 "type": "template",
-                                "altText": "dandyhayate menghapus anda dari grup",
+                                "altText": "alishjkr menghapus anda dari grup",
                                 "template": {
                                     "type": "image_carousel",
                                     "columns": [
@@ -3767,7 +3767,7 @@ async def clientBot(op):
                                                             "action": {
                                                             "type": "uri",
                                                             "label": "𝙅𝙊𝙊𝙓",
-                                                            "uri": "https://line.me/ti/p/~dandyhayate"
+                                                            "uri": "https://line.me/ti/p/~alishjkr"
                                                             }
                                                           },
                                                        ]
@@ -4874,7 +4874,7 @@ async def clientBot(op):
                             
                         elif cmd == "myue":
                             #ret = "Type: Biodata\n\n"
-                           # ret += "  • NAMA SAYA ADALAH DANDY HAYATE SI RAJA MEONG DARI NEGERI SAKURA\n"
+                           # ret += "  • NAMA SAYA ADALAH alish HAYATE SI RAJA MEONG DARI NEGERI SAKURA\n"
                            # ret += "  • Staff:del [@]\n"
                         #    ret += "  • Staff:list"
                           #  hello = "{}".format(str(ret))
