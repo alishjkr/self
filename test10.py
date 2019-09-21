@@ -1,6 +1,4 @@
-#بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ
-# dаͪηͣdꙷɥͣ  ͭ₃ͤ₃ rework
-# Thanks to Khie
+#ALISH JOKER [ ALI AHMADI ]
 #=====================================================================
 from dandy import *
 from liff.ttypes import LiffChatContext, LiffContext, LiffSquareChatContext, LiffNoneContext, LiffViewRequest
@@ -47,7 +45,7 @@ client = LINE()
 client.log("Auth Token : " + str(client.authToken))
 client.log("Timeline Token : " + str(client.tl.channelAccessToken))
 print ('BOT SUDAH AKTIV GUNAKAN DGN BIJAK')
-print ('      by     dаͪηͣdꙷɥͣ  ͭ₃ͤ₃         ')
+print ('      by     ALISH  ͭ₃ͤ₃         ')
 waitOpen = codecs.open("wait.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
 imagesOpen = codecs.open("image.json","r","utf-8")
@@ -66,11 +64,11 @@ clientMID = client.getProfile().mid
 #=====================================================================
 #=====================================================================
 loop = asyncio.get_event_loop()
-#admin =["uf54a6d6d897ead92d21e5beecb750c96"]
-#admin=["u8009af74c79fdb87a3958c336faf41c6"]
-admin=["u7a0bc5ff8a62dec8290475c89d7b6a24"]
-admin=["u7a0bc5ff8a62dec8290475c89d7b6a24"]
-#kikoadmin=["uc9af0b644dd5e18637a1e08bb62e115c"]
+#admin =["ub7e31d9335bddc4752f32fd89b09c6c2"]
+#admin=["ub7e31d9335bddc4752f32fd89b09c6c2"]
+admin=["ub7e31d9335bddc4752f32fd89b09c6c2"]
+admin=["ub7e31d9335bddc4752f32fd89b09c6c2"]
+#kikoadmin=["ub7e31d9335bddc4752f32fd89b09c6c2"]
 
 botStart = time.time()
 msg_image={}
@@ -580,7 +578,7 @@ def sendMention(to, mid, firstmessage='', lastmessage=''):
         try:
             client.sendMessage(to, text, {'MSG_SENDER_NAME': client.getContact(mid).displayName,'MSG_SENDER_ICON': "http://dl.profile.line-cdn.net/" + client.getContact(mid).pictureStatus,'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
         except Exception as e:
-            client.sendMessage(to, text, {'MSG_SENDER_NAME': client.getContact("u8009af74c79fdb87a3958c336faf41c6").displayName,'MSG_SENDER_ICON': 'http://dl.profile.line-cdn.net/' + client.getContact("u8009af74c79fdb87a3958c336faf41c6").pictureStatus,'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+            client.sendMessage(to, text, {'MSG_SENDER_NAME': client.getContact("ub7e31d9335bddc4752f32fd89b09c6c2").displayName,'MSG_SENDER_ICON': 'http://dl.profile.line-cdn.net/' + client.getContact("ub7e31d9335bddc4752f32fd89b09c6c2").pictureStatus,'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
         print(error)
 def sendMention2(to, mid, firstmessage='', lastmessage=''):
@@ -698,7 +696,7 @@ def mentions(to, text="", mids=[]):
         arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mids[0]}
         arr.append(arrData)
         textx += mention + str(text)
-    client.sendMessage(to, textx, {'AGENT_NAME':'LINE OFFICIAL', 'AGENT_LINK': 'line://ti/p/~{}'.format(client.getProfile().userid), 'AGENT_ICON': "http://dl.profile.line-cdn.net/" + client.getContact("u8009af74c79fdb87a3958c336faf41c6").picturePath, 'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+    client.sendMessage(to, textx, {'AGENT_NAME':'LINE OFFICIAL', 'AGENT_LINK': 'line://ti/p/~{}'.format(client.getProfile().userid), 'AGENT_ICON': "http://dl.profile.line-cdn.net/" + client.getContact("ub7e31d9335bddc4752f32fd89b09c6c2").picturePath, 'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
 #=====================================================================
 #=====================================================================
 #=====================================================================
@@ -1045,7 +1043,7 @@ def cytmp3(url):
     return result.url
 #=====================================================================
 def kntlRm(to,hehe):
-    data = {"messages": [{"type": "text","text": hehe,"sentBy":{"label":"R Z T EZ","iconUrl":"https://obs.line-scdn.net/{}".format(client.getContact(clientMID).pictureStatus),"linkUrl":"line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"}}]}
+    data = {"messages": [{"type": "text","text": hehe,"sentBy":{"label":"R Z T EZ","iconUrl":"https://obs.line-scdn.net/{}".format(client.getContact(clientMID).pictureStatus),"linkUrl":"line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"}}]}
     sendCarousel(to,data)
 
 def helpown():
@@ -1416,7 +1414,7 @@ async def clientBot(op):
                                             "aspectMode": "fit",
                                             "action": {
                                                 "type": "uri",
-                                                "uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"
+                                                "uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"
                                             }
                                         },
                                         "body": {
@@ -1606,7 +1604,7 @@ async def clientBot(op):
                             sver = stickers2[sticker]["STKVER"]
                             a = client.shop.getProduct(packageID=int(spkg), language='ID', country='ID')
                             if a.hasAnimation == True:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "http://line.me/ti/p/~dandyhayate"}}]}}
-                            else:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/android/sticker@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"}}]}}
+                            else:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/android/sticker@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"}}]}}
                             sendTemplate(to,data)
                     except Exception as e:
                         print(e)
@@ -1627,7 +1625,7 @@ async def clientBot(op):
                                     "imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker@2x.png".format(sid),
                                     "action": {
                                         "type": "uri",
-                                        "uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6",
+                                        "uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2",
                                         "area": {
                                             "x": 520,
                                             "y": 0,
@@ -3107,7 +3105,7 @@ async def clientBot(op):
                                 sendflex(to, data) 
                         if cmd == 'uching':
                             a = client.getProfile().displayName
-                            c = 'line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6'
+                            c = 'line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2'
                             b = "https://obs.line-scdn.net/" + client.getContact(clientMID).pictureStatus
                             d = clientMID
                             e = client.getProfile().statusMessage
@@ -8452,7 +8450,7 @@ async def clientBot(op):
                                     "sentBy": {
                                         "label": "{}".format(client.getContact(clientMID).displayName),
                                         "iconUrl": "https://obs.line-scdn.net/{}".format(client.getContact(clientMID).pictureStatus),
-                                        "linkUrl": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"
+                                        "linkUrl": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"
                                     }
                                 }
                                 bcTemplate2(friend, data)
@@ -8488,7 +8486,7 @@ async def clientBot(op):
                                         "aspectMode": "cover",
                                         "action": {
                                             "type": "uri",
-                                            "uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"
+                                            "uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"
                                         }
                                     },
                                     "body": {
@@ -8833,7 +8831,7 @@ async def clientBot(op):
                                 for aa in range(k+1):
                                     data = {
                                         "type": "template",
-                                        "altText": "dаͪηͣdꙷɥͣ  ͭ₃ͤ₃ meninggal di grup",
+                                        "altText": "ALISHJOKER  ͭ₃ͤ₃ meninggal di grup",
                                         "template": {
                                             "type": "image_carousel",
                                             "columns": ret_[aa*1 : (aa+1)*1]
@@ -11641,7 +11639,7 @@ async def clientBot(op):
                                         "imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker@2x.png".format(sid),
                                         "action": {
                                             "type": "uri",
-                                            "uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6",
+                                            "uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2",
                                             "area": {
                                                 "x": 520,
                                                 "y": 0,
@@ -11850,7 +11848,7 @@ async def clientBot(op):
             except:
                 pass
         if op.type == 26:
-            print ("[ 26 ] dаͪηͣdꙷɥͣ  ͭ₃ͤ₃")
+            print ("[ 26 ] ALISHJOKER  ͭ₃ͤ₃")
             msg = op.message
             text = str(msg.text)
             msg_id = msg.id
