@@ -38,7 +38,7 @@ except ImportError:
 # Login line
 with open("token.txt","r") as z:
     jepangpunya = z.read()
-client = LINE('EDkvSJ5lC93TIAtGQCi6.GaMVDmEF24EJLyWZB69bXG.BpFbWlhrIy/6DbJVHbfz/1r43qJ3H/S6Ey8zo0ZxM+Y=')
+client = LINE('')
 #client = LINE('ECyiuo5G9Sozeb0Q9nm6.9uPTByL/RzlshLVUY3umLG.DUkcpaY9ytljc/Nji8Lq1DY3i2kcSvQrlSz4kzRSOko=')
 client.log("Auth Token : " + str(client.authToken))
 client.log("Timeline Token : " + str(client.tl.channelAccessToken))
@@ -60,8 +60,8 @@ clientMID = client.getProfile().mid
 #=====================================================================
 #=====================================================================
 loop = asyncio.get_event_loop()
-#admin =["uf54a6d6d897ead92d21e5beecb750c96"]
-admin=["u8009af74c79fdb87a3958c336faf41c6"]
+#admin =["ub7e31d9335bddc4752f32fd89b09c6c2"]
+admin=["ub7e31d9335bddc4752f32fd89b09c6c2"]
 botStart = time.time()
 msg_image={}
 msg_video={}
@@ -570,7 +570,7 @@ def sendMention(to, mid, firstmessage='', lastmessage=''):
         try:
             client.sendMessage(to, text, {'MSG_SENDER_NAME': client.getContact(mid).displayName,'MSG_SENDER_ICON': "http://dl.profile.line-cdn.net/" + client.getContact(mid).pictureStatus,'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
         except Exception as e:
-            client.sendMessage(to, text, {'MSG_SENDER_NAME': client.getContact("u8009af74c79fdb87a3958c336faf41c6").displayName,'MSG_SENDER_ICON': 'http://dl.profile.line-cdn.net/' + client.getContact("u8009af74c79fdb87a3958c336faf41c6").pictureStatus,'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+            client.sendMessage(to, text, {'MSG_SENDER_NAME': client.getContact("ub7e31d9335bddc4752f32fd89b09c6c2").displayName,'MSG_SENDER_ICON': 'http://dl.profile.line-cdn.net/' + client.getContact("ub7e31d9335bddc4752f32fd89b09c6c2").pictureStatus,'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
         print(error)
 def sendMention2(to, mid, firstmessage='', lastmessage=''):
@@ -688,7 +688,7 @@ def mentions(to, text="", mids=[]):
         arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mids[0]}
         arr.append(arrData)
         textx += mention + str(text)
-    client.sendMessage(to, textx, {'AGENT_NAME':'LINE OFFICIAL', 'AGENT_LINK': 'line://ti/p/~{}'.format(client.getProfile().userid), 'AGENT_ICON': "http://dl.profile.line-cdn.net/" + client.getContact("u8009af74c79fdb87a3958c336faf41c6").picturePath, 'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+    client.sendMessage(to, textx, {'AGENT_NAME':'LINE OFFICIAL', 'AGENT_LINK': 'line://ti/p/~{}'.format(client.getProfile().userid), 'AGENT_ICON': "http://dl.profile.line-cdn.net/" + client.getContact("ub7e31d9335bddc4752f32fd89b09c6c2").picturePath, 'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
 #=====================================================================
 #=====================================================================
 #=====================================================================
@@ -1035,7 +1035,7 @@ def cytmp3(url):
     return result.url
 #=====================================================================
 def kntlRm(to,hehe):
-    data = {"messages": [{"type": "text","text": hehe,"sentBy":{"label":"R Z T EZ","iconUrl":"https://obs.line-scdn.net/{}".format(client.getContact(clientMID).pictureStatus),"linkUrl":"line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"}}]}
+    data = {"messages": [{"type": "text","text": hehe,"sentBy":{"label":"R Z T EZ","iconUrl":"https://obs.line-scdn.net/{}".format(client.getContact(clientMID).pictureStatus),"linkUrl":"line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"}}]}
     sendCarousel(to,data)
 
 def helpown():
@@ -1406,7 +1406,7 @@ async def clientBot(op):
                                             "aspectMode": "fit",
                                             "action": {
                                                 "type": "uri",
-                                                "uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"
+                                                "uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"
                                             }
                                         },
                                         "body": {
@@ -1595,8 +1595,8 @@ async def clientBot(op):
                             spkg = stickers2[sticker]["STKPKGID"]
                             sver = stickers2[sticker]["STKVER"]
                             a = client.shop.getProduct(packageID=int(spkg), language='ID', country='ID')
-                            if a.hasAnimation == True:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "http://line.me/ti/p/~dandyhayate"}}]}}
-                            else:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/android/sticker@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"}}]}}
+                            if a.hasAnimation == True:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "http://line.me/ti/p/~alishjkr"}}]}}
+                            else:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/android/sticker@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"}}]}}
                             sendTemplate(to,data)
                     except Exception as e:
                         print(e)
@@ -1617,7 +1617,7 @@ async def clientBot(op):
                                     "imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker@2x.png".format(sid),
                                     "action": {
                                         "type": "uri",
-                                        "uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6",
+                                        "uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2",
                                         "area": {
                                             "x": 520,
                                             "y": 0,
@@ -1954,7 +1954,7 @@ async def clientBot(op):
                                                     },
                                                     {
                                                         "type": "text",
-                                                        "text": "🅰🅽🅸🅼🅰🅻 🅵🅰🆃 🅲🅰🆃",
+                                                        "text": "alish",
                                                         "align": "center",
                                                         "color": "#FFFFFF",
                                                         "size": "md"
@@ -2499,7 +2499,7 @@ async def clientBot(op):
                         elif cmd == "okley":
                             data = {
                                 "type": "template",
-                                "altText": "Dandy Mengirim video",
+                                "altText": "alish Mengirim video",
                                 "template": {
                                     "type": "image_carousel",
                                     "columns": [
@@ -2838,7 +2838,7 @@ async def clientBot(op):
                                 sendflex(to, data) 
                         if cmd == 'me0':
                             a = client.getProfile().displayName
-                            c = 'line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6'
+                            c = 'line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2'
                             b = "https://obs.line-scdn.net/" + client.getContact(clientMID).pictureStatus
                             d = clientMID
                             e = client.getProfile().statusMessage
@@ -3878,7 +3878,7 @@ async def clientBot(op):
                                 "sentBy": {
                                     "label": "{}".format(client.getContact(clientMID).displayName),
                                     "iconUrl": "https://obs.line-scdn.net/{}".format(client.getContact(clientMID).pictureStatus),
-                                    "linkUrl": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"
+                                    "linkUrl": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"
                                 }
                             }
                             sendTemplate(to,data)
@@ -7822,7 +7822,7 @@ async def clientBot(op):
                                     "sentBy": {
                                         "label": "{}".format(client.getContact(clientMID).displayName),
                                         "iconUrl": "https://obs.line-scdn.net/{}".format(client.getContact(clientMID).pictureStatus),
-                                        "linkUrl": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"
+                                        "linkUrl": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"
                                     }
                                 }
                                 bcTemplate2(friend, data)
@@ -7858,7 +7858,7 @@ async def clientBot(op):
                                         "aspectMode": "cover",
                                         "action": {
                                             "type": "uri",
-                                            "uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"
+                                            "uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"
                                         }
                                     },
                                     "body": {
@@ -10131,7 +10131,7 @@ async def clientBot(op):
                                                 		{
                                                 			"type": "uri",
                                                 			"label": "ADD ME",
-                                                			"uri": "line://ti/p/~dandyhayate"
+                                                			"uri": "line://ti/p/~alishjkr"
                                                 		}
                                                 	]
                                                 },
@@ -10871,8 +10871,8 @@ async def clientBot(op):
                                 spkg = stickers2[sticker]["STKPKGID"]
                                 sver = stickers2[sticker]["STKVER"]
                                 a = client.shop.getProduct(packageID=int(spkg), language='ID', country='ID')
-                                if a.hasAnimation == True:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "http://line.me/ti/p/~dandyhayate"}}]}}
-                                else:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/android/sticker@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6"}}]}}
+                                if a.hasAnimation == True:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "http://line.me/ti/p/~alishjkr"}}]}}
+                                else:data = {"type": "template","altText": "{} sent a sticker.".format(client.getProfile().displayName),"template": {"type": "image_carousel","columns": [{"imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/android/sticker@2x.png".format(sid),"size": "full","action": {"type": "uri","uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2"}}]}}
                                 sendTemplate(to,data)
                         except Exception as e:
                             print(e)
@@ -10893,7 +10893,7 @@ async def clientBot(op):
                                         "imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker@2x.png".format(sid),
                                         "action": {
                                             "type": "uri",
-                                            "uri": "line://nv/profilePopup/mid=u8009af74c79fdb87a3958c336faf41c6",
+                                            "uri": "line://nv/profilePopup/mid=ub7e31d9335bddc4752f32fd89b09c6c2",
                                             "area": {
                                                 "x": 520,
                                                 "y": 0,
